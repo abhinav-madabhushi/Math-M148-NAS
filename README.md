@@ -1,5 +1,25 @@
-# Math-M148-NAS
-Repo that applies Neural Architecture Search through reinforcement learning to Multi-Layer Perceptrons on different datasets to find the best MLP architecture. Goal is to achieve one-shot learning of the architecture given any dataset. 
+*Math M148 Final Project • Spring 2025*  
+Jerry Shi · Derek Nakagawa · Abhinav Madabhushi · Camden Weber
+
+> **Goal:** Use reinforcement-learning–driven neural-architecture search (NAS) to discover high-performing, size-efficient multilayer perceptrons (MLPs) for any tabular dataset in a *single shot*.
+
+## 2  Quick Start
+
+```bash
+# clone & install
+git clone https://github.com/your-org/smarter-mlp-nas.git
+cd smarter-mlp-nas
+pip install -r requirements.txt
+
+# run baseline 3-layer MLP for comparison
+jupyter nbconvert --to notebook --execute notebooks/Baseline_MLP.ipynb
+
+# launch NAS search on the Higgs dataset (resume from checkpoint)
+python rl/run_search.py --config configs/higgs.yaml \
+                        --resume checkpoints/higgs_dqn.pt
+
+## 3 Repo Map
+
 - RL_model: Contains code to apply and train a RL model on one dataset to find the best MLP architecture for it.
 - RL_generalized: Contains code to apply and train a RL model on multiple datasets to eventually find the best MLP architecture for any given dataset. Does this by extracting data specific features.
 - Data_Exploration: Applying specific MLP architecture on datasets based on intuition and generally used architectures to draw a comparison. 
