@@ -3,7 +3,7 @@ Jerry Shi · Derek Nakagawa · Abhinav Madabhushi · Camden Weber
 
 > **Goal:** Use reinforcement-learning–driven neural-architecture search (NAS) to discover high-performing, size-efficient multilayer perceptrons (MLPs) for any tabular dataset in a *single shot*.
 
-## 2  Quick Start
+## Quick Start
 
 ```bash
 # clone & install
@@ -17,8 +17,9 @@ jupyter nbconvert --to notebook --execute notebooks/Baseline_MLP.ipynb
 # launch NAS search on the Higgs dataset (resume from checkpoint)
 python rl/run_search.py --config configs/higgs.yaml \
                         --resume checkpoints/higgs_dqn.pt
+```
 
-## 3 Repo Map
+## Repo Map
 
 - RL_model: Contains code to apply and train a RL model on one dataset to find the best MLP architecture for it.
 - RL_generalized: Contains code to apply and train a RL model on multiple datasets to eventually find the best MLP architecture for any given dataset. Does this by extracting data specific features.
