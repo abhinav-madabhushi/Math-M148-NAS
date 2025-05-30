@@ -3,22 +3,6 @@ Jerry Shi · Derek Nakagawa · Abhinav Madabhushi · Camden Weber
 
 > **Goal:** Use reinforcement-learning–driven neural-architecture search (NAS) to discover high-performing, size-efficient multilayer perceptrons (MLPs) for any tabular dataset in a *single shot*.
 
-## Quick Start
-
-```bash
-# clone & install
-git clone https://github.com/your-org/smarter-mlp-nas.git
-cd smarter-mlp-nas
-pip install -r requirements.txt
-
-# run baseline 3-layer MLP for comparison
-jupyter nbconvert --to notebook --execute notebooks/Baseline_MLP.ipynb
-
-# launch NAS search on the Higgs dataset (resume from checkpoint)
-python rl/run_search.py --config configs/higgs.yaml \
-                        --resume checkpoints/higgs_dqn.pt
-```
-
 ## Repo Map
 
 - RL_model: Contains code to apply and train a RL model on one dataset to find the best MLP architecture for it.
